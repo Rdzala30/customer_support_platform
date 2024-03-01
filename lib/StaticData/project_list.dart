@@ -49,14 +49,14 @@ final List<Project> projectList = [
   Project(name: 'AppInnovateX', date: '2022-08-12', status: 'Completed', project_manager:   'Rohit Shah', members: 5 ),
   Project(name: 'AppPulseX', date: '2022-02-15', status: 'In Progress', project_manager:   'Chintak Patel', members: 7 ),
   Project(name: 'AppCatalystXpress', date: '2022-03-20', status: 'Completed', project_manager:   'Dipa Majumdar', members: 8 ),
-  Project(name: 'AppSyncHarbor', date: '2022-04-10', status: 'In Progress', project_manager:   'Rohit Shah', members: 6 ),
+  Project(name: 'AppSyncHarbor', date: '2022-04-10', status: 'Hold', project_manager:   'Rohit Shah', members: 6 ),
   Project(name: 'RapidAppRevolution', date: '2022-07-05', status: 'In Progress', project_manager:   'Chintak Patel', members: 8 ),
-  Project(name: 'AppHarmonyX', date: '2022-08-12', status: 'In Progress', project_manager:   'Dipa Majumdar', members: 5 ),
+  Project(name: 'AppHarmonyX', date: '2022-08-12', status: 'Hold', project_manager:   'Dipa Majumdar', members: 5 ),
   Project(name: 'AppSphereEvolve', date: '2022-02-15', status: 'In Progress', project_manager:   'Rohit Shah', members: 7 ),
-  Project(name: 'AppSyncInnovate', date: '2022-03-20', status: 'In Progress', project_manager:   'Chintak Patel', members: 8 ),
+  Project(name: 'AppSyncInnovate', date: '2022-03-20', status: 'Hold', project_manager:   'Chintak Patel', members: 8 ),
   Project(name: 'DevAppMatrix', date: '2022-04-10', status: 'In Progress', project_manager:   'Dipa Majumdar', members: 6 ),
   Project(name: 'AppRevolutionX', date: '2022-07-05', status: 'In Progress', project_manager:   'Rohit Shah', members: 8 ),
-  Project(name: 'AppInnovate360X', date: '2022-08-12', status: 'In Progress', project_manager:   'Chintak Patel', members: 5 ),
+  Project(name: 'AppInnovate360X', date: '2022-08-12', status: 'Hold', project_manager:   'Chintak Patel', members: 5 ),
 
 ];
 

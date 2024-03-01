@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'AuditorPage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
           children: [
             SizedBox(width: 10.0),
-            // Image widget
             Image.asset(
               'assets/CS.png',
               height: 300.0,
@@ -81,16 +79,15 @@ class _LoginScreenState extends State<LoginScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 padding: EdgeInsets.symmetric(vertical: 8.0),
-               // Vertical padding
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
               ),
               child: Text('Login' , style:
-                TextStyle(
+              TextStyle(
                   fontSize: 21,
                   color: Colors.white
-                ),
+              ),
               ),
             ),
           ],
@@ -101,21 +98,21 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-         content: Row(
+      SnackBar(
+        content: Row(
           children: [
-             Icon(Icons.error_outline, color: Colors.white),
-             SizedBox(width: 8.0),
-              Text('You do not have permission to log in'),
-      ],
-    ),
-    duration: Duration(seconds: 3),
-    backgroundColor: Colors.red[900],
-    behavior: SnackBarBehavior.floating,
-    shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(10.0)
+            Icon(Icons.error_outline, color: Colors.white),
+            SizedBox(width: 8.0),
+            Text('You do not have permission to log in'),
+          ],
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Colors.red[900],
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0)
+        ),
       ),
-    ),
     );
 
   }

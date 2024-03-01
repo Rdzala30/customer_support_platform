@@ -1,5 +1,6 @@
+import 'package:customer_support_platform/Popup_Pages/CreateProject.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'StaticData/ProjectDetailsPage.dart';
 import 'StaticData/project_list.dart';
 
@@ -16,22 +17,22 @@ class AuditorPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Align(
-      
+
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Image(image: AssetImage('assets/profile.png') , height: 44, width: 43),
-      
+
                 SizedBox(width: 8.0),
                 Text('Adhya Sharma \n Auditor' , style:
-                  TextStyle(fontSize: 15),),
+                TextStyle(fontSize: 15),),
               ],
             ),
           ),
         ),
         drawer: Drawer(
           child: Align(
-      
+
             child: ListView(
               children: [
                 Align(
@@ -48,35 +49,44 @@ class AuditorPage extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  title: ElevatedButton(
-                    onPressed: () {  },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      // Vertical padding
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                  title: Hero(
+                    tag: "ShowPopUp",
+
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return CreatePopUp();
+                          },
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        padding: EdgeInsets.symmetric(vertical: 8.0),
+
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Icon(Icons.add , color: Colors.white,),
-                          Text('New Project',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Icon(Icons.add , color: Colors.white,),
+                            Text('New Project',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
                             ),
-                          ),
-      
-      
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   onTap: () {
-
                     Navigator.pop(context);
                   },
                 ), ListTile(
@@ -87,7 +97,6 @@ class AuditorPage extends StatelessWidget {
                     ],
                   ),
                   onTap: () {
-
                     Navigator.pop(context);
                   },
                 ), ListTile(
@@ -98,7 +107,6 @@ class AuditorPage extends StatelessWidget {
                     ],
                   ),
                   onTap: () {
-
                     Navigator.pop(context);
                   },
                 ), ListTile(
@@ -110,7 +118,6 @@ class AuditorPage extends StatelessWidget {
                     ],
                   ),
                   onTap: () {
-
                     Navigator.pop(context);
                   },
                 ),
@@ -122,7 +129,6 @@ class AuditorPage extends StatelessWidget {
                     ],
                   ),
                   onTap: () {
-
                     Navigator.pop(context);
                   },
                 ),
@@ -131,7 +137,7 @@ class AuditorPage extends StatelessWidget {
           ),
         ),
         body: Container(
-      
+
           child: Column(
             children: [
               Row(
@@ -144,22 +150,21 @@ class AuditorPage extends StatelessWidget {
                       border: Border.all(color: Colors.black54),
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     ),
-      
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("45" ,
-                        style: TextStyle(
-                          fontSize: 29,
-                          fontWeight: FontWeight.bold,
-                        ),
+                          style: TextStyle(
+                            fontSize: 29,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         Text("All Projects",
                           style: TextStyle(
-                            fontSize: 18
+                              fontSize: 18
                           ),
                         )
-      
                       ],
                     ),
                   ), Container(
@@ -184,12 +189,12 @@ class AuditorPage extends StatelessWidget {
                                 fontSize: 18
                             ),
                           )
-      
+
                         ],
                       ),
                     ),
                   ),
-      
+
                 ],
               ), Row(
                 children: [
@@ -201,7 +206,7 @@ class AuditorPage extends StatelessWidget {
                       border: Border.all(color: Colors.black54),
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     ),
-      
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -216,8 +221,6 @@ class AuditorPage extends StatelessWidget {
                               fontSize: 18
                           ),
                         )
-      
-      
                       ],
                     ),
                   ), Container(
@@ -227,7 +230,7 @@ class AuditorPage extends StatelessWidget {
                       border: Border.all(color: Colors.black54),
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     ),
-      
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -242,8 +245,8 @@ class AuditorPage extends StatelessWidget {
                               fontSize: 18
                           ),
                         )
-      
-      
+
+
                       ],
                     ),
                   ),
@@ -320,6 +323,7 @@ class ProjectList extends StatelessWidget {
               ),
             );
           },
+
         );
       },
     );
