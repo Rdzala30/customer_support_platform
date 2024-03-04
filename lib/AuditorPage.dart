@@ -1,6 +1,7 @@
-import 'package:customer_support_platform/Popup_Pages/CreateProject.dart';
+import 'package:customer_support_platform/SideNavigationDrawer/NavigationDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'NewProjectPage.dart';
 import 'StaticData/ProjectDetailsPage.dart';
 import 'StaticData/project_list.dart';
 
@@ -30,112 +31,7 @@ class AuditorPage extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(
-          child: Align(
-
-            child: ListView(
-              children: [
-                Align(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    child: ListTile(
-                      title: Row(
-                        children: [
-                          Image(image: AssetImage('assets/CS.png') , height: 44, width: 43),
-                          Text('Customer \n Support'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  title: Hero(
-                    tag: "ShowPopUp",
-
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return CreatePopUp();
-                          },
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        padding: EdgeInsets.symmetric(vertical: 8.0),
-
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Icon(Icons.add , color: Colors.white,),
-                            Text('New Project',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ), ListTile(
-                  title: Row(
-                    children: [
-                      Icon(Icons.cases_outlined),
-                      Text('Projects'),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ), ListTile(
-                  title: Row(
-                    children: [
-                      Icon(Icons.person_outline_rounded),
-                      Text('Project Managers'),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ), ListTile(
-                  hoverColor: Colors.black54,
-                  title: Row(
-                    children: [
-                      Icon(Icons.person_add_alt_outlined),
-                      Text('Employees'),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: Row(
-                    children: [
-                      Icon(Icons.settings),
-                      Text('Settings'),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
+        drawer: SideNavigationDrawer(),
         body: Container(
 
           child: Column(
@@ -245,8 +141,6 @@ class AuditorPage extends StatelessWidget {
                               fontSize: 18
                           ),
                         )
-
-
                       ],
                     ),
                   ),
@@ -285,6 +179,16 @@ class AuditorPage extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => NewProjectPage()),
+            );
+          },
+          child: Icon(Icons.add),
         ),
       ),
     );
