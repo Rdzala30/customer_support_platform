@@ -1,12 +1,11 @@
 import 'package:customer_support_platform/SideNavigationDrawer/NavigationDrawer.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:customer_support_platform/StaticData/ViewProjectDetails.dart';
 import 'package:flutter/material.dart';
-import 'NewProjectPage.dart';
 import 'StaticData/ProjectDetailsPage.dart';
 import 'StaticData/project_list.dart';
 
 class AuditorPage extends StatelessWidget {
-  const AuditorPage({Key? key});
+  const AuditorPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,177 +17,188 @@ class AuditorPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Align(
-
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image(image: AssetImage('assets/profile.png') , height: 44, width: 43),
-
-                SizedBox(width: 8.0),
-                Text('Adhya Sharma \n Auditor' , style:
-                TextStyle(fontSize: 15),),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  height: 35,
+                  width: screenWidth * 0.40,
+                  child: Row(children: [
+                    const Text(
+                      "Search",
+                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed: () {},
+                    ),
+                  ]),
+                ),
+                const Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Image(
+                      image: AssetImage('assets/profile.png'),
+                      height: 44,
+                      width: 43,
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'Adhya Sharma \n Auditor',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
         ),
-        drawer: SideNavigationDrawer(),
-        body: Container(
-
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(25),
-                    width: screenWidth * 0.4,
-                    height: screenHeight  * 0.10,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black54),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    ),
-
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("45" ,
-                          style: TextStyle(
-                            fontSize: 29,
-                            fontWeight: FontWeight.bold,
-                          ),
+        drawer: const SideNavigationDrawer(),
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(25),
+                  width: screenWidth * 0.4,
+                  height: screenHeight * 0.10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "45",
+                        style: TextStyle(
+                          fontSize: 29,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text("All Projects",
-                          style: TextStyle(
-                              fontSize: 18
-                          ),
-                        )
-                      ],
-                    ),
-                  ), Container(
-                    width: screenWidth * 0.4,
-                    height: screenHeight * 0.10,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black54),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("24" ,
-                            style: TextStyle(
-                              fontSize: 29,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text("In Progress",
-                            style: TextStyle(
-                                fontSize: 18
-                            ),
-                          )
-
-                        ],
                       ),
+                      Text(
+                        "All Projects",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  width: screenWidth * 0.4,
+                  height: screenHeight * 0.10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  child: const Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "24",
+                          style: TextStyle(
+                            fontSize: 29,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "In Progress",
+                          style: TextStyle(fontSize: 18),
+                        )
+                      ],
                     ),
                   ),
-
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 25),
+                  width: screenWidth * 0.4,
+                  height: screenHeight * 0.10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "12",
+                        style: TextStyle(
+                          fontSize: 29,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Completed",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  width: screenWidth * 0.4,
+                  height: screenHeight * 0.10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "9",
+                        style: TextStyle(
+                          fontSize: 29,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Hold",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight * 0.07,
+              child: const TabBar(
+                tabs: [
+                  Tab(
+                    text: 'All Projects',
+                  ),
+                  Tab(
+                    text: 'In Progress',
+                  ),
+                  Tab(
+                    text: 'Completed',
+                  ),
+                  Tab(
+                    text: 'Hold',
+                  ),
                 ],
-              ), Row(
+              ),
+            ),
+            const Expanded(
+              child: TabBarView(
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 25),
-                    width: screenWidth * 0.4,
-                    height: screenHeight  * 0.10,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black54),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    ),
-
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("12" ,
-                          style: TextStyle(
-                            fontSize: 29,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text("Completed",
-                          style: TextStyle(
-                              fontSize: 18
-                          ),
-                        )
-                      ],
-                    ),
-                  ), Container(
-                    width: screenWidth * 0.4,
-                    height: screenHeight  * 0.10,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black54),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    ),
-
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("9" ,
-                          style: TextStyle(
-                            fontSize: 29,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text("Hold",
-                          style: TextStyle(
-                              fontSize: 18
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
+                  ProjectList(),
+                  ProjectList(status: 'In Progress'),
+                  ProjectList(status: 'Completed'),
+                  ProjectList(status: 'Hold'),
                 ],
               ),
-
-              SizedBox(
-                height: screenHeight * 0.07,
-                child: TabBar(
-                  tabs: [
-                    Tab(
-                      text: 'All Projects',
-                    ),
-                    Tab(
-                      text: 'In Progress',
-                    ),
-                    Tab(
-                      text: 'Completed',
-                    ),
-                    Tab(
-                      text: 'Hold',
-                    ),
-                  ],
-                ),
-              ),
-
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    ProjectList(),
-                    ProjectList(status: 'In Progress'),
-                    ProjectList(status: 'Completed'),
-                    ProjectList(status: 'Hold'),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => NewProjectPage()),
-            );
-          },
-          child: Icon(Icons.add),
+            ),
+          ],
         ),
       ),
     );
@@ -198,7 +208,7 @@ class AuditorPage extends StatelessWidget {
 class ProjectList extends StatelessWidget {
   final String? status;
 
-  ProjectList({this.status});
+  const ProjectList({super.key, this.status});
 
   @override
   Widget build(BuildContext context) {
@@ -211,8 +221,8 @@ class ProjectList extends StatelessWidget {
         return ListTile(
           title: Text(projects[index].name),
           subtitle: Text('Started On: ${projects[index].date}'),
-          trailing:  Container(
-            padding: EdgeInsets.all(8.0),
+          trailing: Container(
+            padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
               color: _getStatusColor(projects[index].status),
               borderRadius: BorderRadius.circular(8.0),
@@ -220,14 +230,43 @@ class ProjectList extends StatelessWidget {
             child: Text(projects[index].status),
           ),
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ProjectDetailsPage(project: projects[index]),
-              ),
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text("Choose an option"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ProjectDetailsPage(project: projects[index]),
+                          ),
+                        );
+                      },
+                      child: const Text("Edit Details"),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ViewProjectDetails(project: projects[index]),
+                          ),
+                        );
+                      },
+                      child: const Text("View Complete Details"),
+                    ),
+                  ],
+                );
+              },
             );
           },
-
         );
       },
     );
@@ -249,5 +288,4 @@ class ProjectList extends StatelessWidget {
         return Colors.orangeAccent;
     }
   }
-
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CreatePopUp extends StatefulWidget {
+  const CreatePopUp({super.key});
+
   @override
   _CreatePopUpState createState() => _CreatePopUpState();
 }
@@ -23,17 +25,17 @@ class _CreatePopUpState extends State<CreatePopUp> {
     return AlertDialog(
       title: Row(
         children: [
-          Text('Create Project'),
-          Spacer(),
+          const Text('Create Project'),
+          const Spacer(),
           InkWell(
-            child: Icon(Icons.close),
+            child: const Icon(Icons.close),
             onTap: () {
               Navigator.pop(context);
             },
           ),
         ],
       ),
-      content: Container(
+      content: SizedBox(
         width: screenWidth * 0.8,
         height: screenHeight * 0.4,
         child: Stepper(
@@ -42,14 +44,14 @@ class _CreatePopUpState extends State<CreatePopUp> {
             Step(
               isActive: activeStep == 0,
               state: activeStep > 0 ? StepState.complete : StepState.indexed,
-              title: Text(''),
-              content: Container(
+              title: const Text(''),
+              content: SizedBox(
                 width: screenWidth * 0.4,
                 child: Column(
                   children: [
                     Container(
                       alignment: AlignmentDirectional.topStart,
-                      child: Text(
+                      child: const Text(
                         "Project Details",
                         style: TextStyle(
                           fontSize: 26,
@@ -65,19 +67,21 @@ class _CreatePopUpState extends State<CreatePopUp> {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(8.0),
-                          color: showProjectNameError ? Colors.red.withOpacity(0.3) : null,
+                          color: showProjectNameError
+                              ? Colors.red.withOpacity(0.3)
+                              : null,
                         ),
                         child: TextField(
                           controller: projectNameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Project Name..",
                           ),
                         ),
                       ),
                     ),
                     if (showProjectNameError)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           "Project name can't be empty",
                           style: TextStyle(
@@ -92,14 +96,14 @@ class _CreatePopUpState extends State<CreatePopUp> {
             Step(
               isActive: activeStep == 1,
               state: activeStep > 1 ? StepState.complete : StepState.indexed,
-              title: Text(''),
-              content: Container(
+              title: const Text(''),
+              content: SizedBox(
                 width: screenWidth * 0.4,
                 child: Column(
                   children: [
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text(
+                      child: const Text(
                         "Invite Client",
                         style: TextStyle(
                           fontSize: 26,
@@ -112,19 +116,21 @@ class _CreatePopUpState extends State<CreatePopUp> {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(8.0),
-                          color: showClientNameError ? Colors.red.withOpacity(0.3) : null,
+                          color: showClientNameError
+                              ? Colors.red.withOpacity(0.3)
+                              : null,
                         ),
                         child: TextField(
                           controller: clientNameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Client Name..",
                           ),
                         ),
                       ),
                     ),
                     if (showClientNameError)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           "Client name can't be empty",
                           style: TextStyle(
@@ -138,19 +144,21 @@ class _CreatePopUpState extends State<CreatePopUp> {
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(8.0),
-                          color: showClientEmailError ? Colors.red.withOpacity(0.3) : null,
+                          color: showClientEmailError
+                              ? Colors.red.withOpacity(0.3)
+                              : null,
                         ),
                         child: TextField(
                           controller: clientEmailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Client Email..",
                           ),
                         ),
                       ),
                     ),
                     if (showClientEmailError)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           "Client Email can't be empty",
                           style: TextStyle(
@@ -168,17 +176,17 @@ class _CreatePopUpState extends State<CreatePopUp> {
                             border: Border.all(color: Colors.black),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          child: Text(
+                          alignment: Alignment.center,
+                          child: const Text(
                             " + ADD ",
                             style: TextStyle(
                               fontSize: 23,
                             ),
                           ),
-                          alignment: Alignment.center,
                         ),
                         onTap: () {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
+                            const SnackBar(
                               content: Text('Added Successfully'),
                             ),
                           );
@@ -192,14 +200,14 @@ class _CreatePopUpState extends State<CreatePopUp> {
             Step(
               isActive: activeStep == 2,
               state: activeStep > 2 ? StepState.complete : StepState.indexed,
-              title: Text(''),
-              content: Container(
+              title: const Text(''),
+              content: SizedBox(
                 width: screenWidth * 0.4,
                 child: Column(
                   children: [
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text(
+                      child: const Text(
                         "Select Project Manager",
                         style: TextStyle(
                           fontSize: 22.2,
@@ -209,19 +217,17 @@ class _CreatePopUpState extends State<CreatePopUp> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Container(
-
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: DropdownButtonFormField<String>(
-
                           onChanged: (String? newValue) {
                             setState(() {
                               selectedProjectManager = newValue!;
                             });
                           },
-                          items: [
+                          items: const [
                             DropdownMenuItem<String>(
                               value: 'Project Manager 1',
                               child: Text('Dipa Majumdar'),
@@ -235,7 +241,7 @@ class _CreatePopUpState extends State<CreatePopUp> {
                               child: Text('Rohit Shah'),
                             ),
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Select Project Manager',
                           ),
                         ),
@@ -271,7 +277,6 @@ class _CreatePopUpState extends State<CreatePopUp> {
                 });
               }
 
-
               if (clientEmailController.text.isEmpty) {
                 setState(() {
                   showClientEmailError = true;
@@ -290,7 +295,7 @@ class _CreatePopUpState extends State<CreatePopUp> {
               });
             } else if (activeStep == 2) {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content: Text("Project Created Successfully"),
               ));
             }

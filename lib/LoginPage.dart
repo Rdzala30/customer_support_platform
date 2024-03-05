@@ -16,31 +16,27 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.blue[100],
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-
-
           children: [
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Image.asset(
               'assets/CS.png',
               height: 300.0,
             ),
-
-
             Padding(
               padding: const EdgeInsets.only(top: 60.0),
               child: DropdownButton<String>(
-                hint: Text('Select an option'),
+                hint: const Text('Select an option for login'),
                 value: selectedOption,
                 onChanged: (String? newValue) {
                   setState(() {
                     selectedOption = newValue;
                   });
                 },
-                items: [
+                items: const [
                   DropdownMenuItem<String>(
                     value: 'Admin',
                     child: Text('Admin'),
@@ -60,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 if (selectedOption == 'Admin') {
@@ -68,8 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 } else if (selectedOption == 'Project Manager') {
                   showSnackBar(context);
                 } else if (selectedOption == 'Auditor') {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AuditorPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AuditorPage()));
                 } else if (selectedOption == 'Client') {
                   showSnackBar(context);
                 } else {
@@ -78,16 +76,14 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
               ),
-              child: Text('Login' , style:
-              TextStyle(
-                  fontSize: 21,
-                  color: Colors.white
-              ),
+              child: const Text(
+                'Login',
+                style: TextStyle(fontSize: 21, color: Colors.white),
               ),
             ),
           ],
@@ -99,27 +95,25 @@ class _LoginScreenState extends State<LoginScreen> {
   void showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Row(
+        content: const Row(
           children: [
             Icon(Icons.error_outline, color: Colors.white),
             SizedBox(width: 8.0),
             Text('You do not have permission to log in'),
           ],
         ),
-        duration: Duration(seconds: 3),
+        duration: const Duration(seconds: 3),
         backgroundColor: Colors.red[900],
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0)
-        ),
+        shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
-
   }
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: LoginScreen(),
   ));
 }

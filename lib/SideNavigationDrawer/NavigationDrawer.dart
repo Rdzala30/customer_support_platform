@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../Popup_Pages/CreateProject.dart';
 
 class SideNavigationDrawer extends StatelessWidget {
+  const SideNavigationDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -9,11 +11,14 @@ class SideNavigationDrawer extends StatelessWidget {
         children: [
           Align(
             child: Container(
-              padding: EdgeInsets.all(20),
-              child: ListTile(
+              padding: const EdgeInsets.all(20),
+              child: const ListTile(
                 title: Row(
                   children: [
-                    Image(image: AssetImage('assets/CS.png') , height: 44, width: 43),
+                    Image(
+                        image: AssetImage('assets/CS.png'),
+                        height: 44,
+                        width: 43),
                     Text('Customer \n Support'),
                   ],
                 ),
@@ -29,19 +34,19 @@ class SideNavigationDrawer extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return CreatePopUp();
+                      return const CreatePopUp();
                     },
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     children: [
                       Icon(Icons.add, color: Colors.white),
@@ -62,7 +67,7 @@ class SideNavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Row(
+            title: const Row(
               children: [
                 Icon(Icons.cases_outlined),
                 Text('Projects'),
@@ -73,7 +78,7 @@ class SideNavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Row(
+            title: const Row(
               children: [
                 Icon(Icons.person_outline_rounded),
                 Text('Project Managers'),
@@ -85,7 +90,7 @@ class SideNavigationDrawer extends StatelessWidget {
           ),
           ListTile(
             hoverColor: Colors.black54,
-            title: Row(
+            title: const Row(
               children: [
                 Icon(Icons.person_add_alt_outlined),
                 Text('Employees'),
@@ -96,7 +101,7 @@ class SideNavigationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Row(
+            title: const Row(
               children: [
                 Icon(Icons.settings),
                 Text('Settings'),

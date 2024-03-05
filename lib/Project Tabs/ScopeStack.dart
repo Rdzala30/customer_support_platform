@@ -8,9 +8,8 @@ class ScopeStack extends StatefulWidget {
 }
 
 class _ScopeStackState extends State<ScopeStack> {
-  String selectedTechnology = "Mobile app"; // Default value
+  String selectedTechnology = "Mobile app";
   TextEditingController textFieldController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,26 +21,23 @@ class _ScopeStackState extends State<ScopeStack> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // First Heading
-              Text(
+              const Text(
                 "Select Project Technology's  ",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
-              SizedBox(height: 10),
-              // Dropdown with 4 options
+              const SizedBox(height: 10),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: DropdownButton<String>(
                   value: selectedTechnology,
-                  items: [
+                  items: const [
                     DropdownMenuItem(
                       value: "Backend",
                       child: Text("Backend"),
@@ -64,25 +60,21 @@ class _ScopeStackState extends State<ScopeStack> {
                       selectedTechnology = value!;
                     });
                   },
-                  hint: Text("Technology"),
+                  hint: const Text("Technology"),
                   underline: Container(),
-                  icon: Icon(Icons.arrow_drop_down),
+                  icon: const Icon(Icons.arrow_drop_down),
                   isExpanded: true,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
-
-              // Second Heading
-              SizedBox(height: 150),
-              Text(
+              const SizedBox(height: 150),
+              const Text(
                 "Project Scope",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
-
               Container(
                 height: 200,
                 decoration: BoxDecoration(
@@ -92,27 +84,26 @@ class _ScopeStackState extends State<ScopeStack> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
                     controller: textFieldController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Write here...",
                     ),
                   ),
                 ),
               ),
-
-              SizedBox(height: 20),
-              // Button
+              const SizedBox(height: 20),
               SizedBox(
                 height: 60,
                 width: 120,
                 child: ElevatedButton(
                   onPressed: () {
                     textFieldController.clear();
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text("Data Saved Successfully")));
+                    DefaultTabController.of(context).animateTo(2);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -125,9 +116,9 @@ class _ScopeStackState extends State<ScopeStack> {
                           height: 50,
                           width: 100,
                           child: Container(
-                            margin: EdgeInsets.all(2),
+                            margin: const EdgeInsets.all(2),
                             alignment: Alignment.center,
-                            child: Text(
+                            child: const Text(
                               'Continue',
                               textAlign: TextAlign.center,
                               style: TextStyle(

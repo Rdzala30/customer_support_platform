@@ -11,9 +11,9 @@ class NewProjectPage extends StatelessWidget {
     TextEditingController textGoalsEditingController = TextEditingController();
     TextEditingController textObjectivesEditingController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Back"),
-      ),
+        appBar: AppBar(
+          title: const Text("Back"),
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -21,18 +21,18 @@ class NewProjectPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
 
-                  Text(
+                  const Text(
                     "Add Project Details",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   // First Heading
-                  Text(
+                  const Text(
                     "Project Name *",
                     style: TextStyle(
                       fontSize: 20,
@@ -50,16 +50,16 @@ class NewProjectPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         controller: textNameEditingController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Placeholder text here...",
                         ),
                       ),
                     ),
                   ),
 
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
 
-                  Text(
+                  const Text(
                     "Project Brief",
                     style: TextStyle(
                       fontSize: 20,
@@ -76,18 +76,16 @@ class NewProjectPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         controller: textBriefEditingController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Write project brief here...",
                         ),
                       ),
                     ),
                   ),
 
-                  //2
+                  const SizedBox(height: 15),
 
-                  SizedBox(height: 15),
-                  // First Heading
-                  Text(
+                  const Text(
                     "Purpose",
                     style: TextStyle(
                       fontSize: 20,
@@ -104,7 +102,7 @@ class NewProjectPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         controller: textPurposeEditingController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Write project Purpose here...",
                         ),
                       ),
@@ -113,8 +111,8 @@ class NewProjectPage extends StatelessWidget {
 
                   //3
 
-                  SizedBox(height: 15),
-                  Text(
+                  const SizedBox(height: 15),
+                  const Text(
                     "Goals",
                     style: TextStyle(
                       fontSize: 20,
@@ -131,7 +129,7 @@ class NewProjectPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         controller: textGoalsEditingController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Write project Goals here...",
                         ),
                       ),
@@ -140,15 +138,14 @@ class NewProjectPage extends StatelessWidget {
 
                   //4
 
-                  SizedBox(height: 15),
-                  Text(
+                  const SizedBox(height: 15),
+                  const Text(
                     "Objectives",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-
 
                   Container(
                     height: 140,
@@ -159,17 +156,15 @@ class NewProjectPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         controller: textObjectivesEditingController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Write project objectives here...",
                         ),
                       ),
                     ),
                   ),
 
-                  //5
+                  const SizedBox(height: 20),
 
-                  SizedBox(height: 20),
-                  // Button
                   SizedBox(
                     height: 60,
                     width: 120,
@@ -180,12 +175,13 @@ class NewProjectPage extends StatelessWidget {
                         textNameEditingController.clear();
                         textPurposeEditingController.clear();
                         textObjectivesEditingController.clear();
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("Data Saved Successfully")));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text("Data Saved Successfully")));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
-                        padding: EdgeInsets.symmetric(vertical: 8.0),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
@@ -198,9 +194,9 @@ class NewProjectPage extends StatelessWidget {
                               height: 50,
                               width: 100,
                               child: Container(
-                                margin: EdgeInsets.all(2),
+                                margin: const EdgeInsets.all(2),
                                 alignment: Alignment.center,
-                                child: Text(
+                                child: const Text(
                                   'Continue',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -215,11 +211,8 @@ class NewProjectPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                ]
-            ),
-
+                ]),
           ),
-        )
-    );
+        ));
   }
 }
