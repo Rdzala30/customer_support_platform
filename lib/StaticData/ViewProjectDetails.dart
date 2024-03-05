@@ -1,7 +1,7 @@
 import 'package:customer_support_platform/StaticData/project_list.dart';
 import 'package:flutter/material.dart';
 import '../NewProjectPage.dart';
-import '../SideNavigationDrawer/NavigationDrawer.dart';
+
 
 class ViewProjectDetails extends StatelessWidget {
   final Project project;
